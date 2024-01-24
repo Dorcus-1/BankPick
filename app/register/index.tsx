@@ -1,12 +1,17 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Tabs } from 'expo-router';
+import { View, Text, StyleSheet,Button } from 'react-native';
+import { Link } from 'expo-router';
 
 // create a component
-const _layout = () => {
+const Register = () => {
     return (
-        <Tabs></Tabs>
+        <View style={styles.container}>
+            <Text>Register</Text>
+            <Link href="../login" asChild>
+            <Button title= "Login"/>
+            </Link>
+        </View>
     );
 };
 
@@ -21,4 +26,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default _layout;
+export default Register;
