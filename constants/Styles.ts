@@ -44,4 +44,15 @@ btnText: {
     fontSize: 16,
     fontFamily: 'SpaceMono',
   },
+inputField:{
+    height:50,
+    width:380,
+    borderBottomWidth:1,
+    paddingBottom:0,
+    fontSize:16,
+    borderBottomColor:'#E2E2E2',
+    fontWeight:'500',
+    color:'black',
+
+}
 })
