@@ -55,10 +55,8 @@ function RootLayoutNav() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false, title:"Home" }} />
-        <Stack.Screen name="onboarding2" options={{ headerShown: true, title:"b2" }} />
-        <Stack.Screen name="onboarding3" options={{ headerShown: true, title:"b3" }} />
-        <Stack.Screen name="register/index" options={{ headerShown: true,
-           title:"b3",
+        <Stack.Screen name="register/index" options={{ 
+          headerShown: false,
            headerRight:()=>(
             <Button title="Login" onPress={()=>router.push('/login')}/>
            ) }} />
@@ -67,7 +65,7 @@ function RootLayoutNav() {
           title:"b3",
           presentation:"modal"}} />
 
-<Stack.Screen name="(tabs)" options={{ 
+   <Stack.Screen name="(tabs)" options={{ 
   headerShown: false,
   
     }} />

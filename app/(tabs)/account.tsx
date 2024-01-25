@@ -1,16 +1,15 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet,Button } from 'react-native';
-import { Link } from 'expo-router';
+import { View, Text, StyleSheet } from 'react-native';
 
 // create a component
-const Page2 = () => {
+const Account
+ = () => {
     return (
         <View style={styles.container}>
-            <Text>Page2 hh</Text>
-            <Link href= "./onboarding3" asChild>
-                <Button title="Next"/>
-            </Link>
+            <Text>Account
+                
+            </Text>
         </View>
     );
 };
@@ -21,9 +20,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-       
+        backgroundColor: '#2c3e50',
     },
 });
 
 //make this component available to the app
-export default Page2;
+export default Account
+;

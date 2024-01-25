@@ -1,12 +1,18 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
+
+import { View, Text, StyleSheet ,Button} from 'react-native';
 
 // create a component
-const Cards = () => {
+const Explore = () => {
+    const router= useRouter();
+
     return (
         <View style={styles.container}>
-            <Text>Cards</Text>
+            <Text>Explore</Text>
+            <Button title="Back" onPress={()=>router.back()}/>
+
         </View>
     );
 };
@@ -22,4 +28,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default Cards;
+export default Explore;

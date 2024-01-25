@@ -1,12 +1,16 @@
 //import liraries
+import { useRouter } from 'expo-router';
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,Button } from 'react-native';
 
 // create a component
 const Home = () => {
+
+    const router=useRouter();
     return (
         <View style={styles.container}>
             <Text>Home</Text>
+            <Button title="Back" onPress={()=>router.back()}/>
         </View>
     );
 };
