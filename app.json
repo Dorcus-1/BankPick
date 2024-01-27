@@ -8,9 +8,9 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/Group 1.png",
       "resizeMode": "contain",
-      "backgroundColor": "#161622"
+      "backgroundColor": "#53B175"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -27,7 +27,8 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "fastRefresh": true
     },
     "plugins": [
       "expo-router"
