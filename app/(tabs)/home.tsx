@@ -12,10 +12,26 @@ import Colors from "@/constants/Colors";
 // create a component
 const Home = () => {
   const router = useRouter();
-  const [products, setProducts] = useState([
-    { id: '1', name: 'Product 1', quantity: 5, price: 10, image: '../assets/images/groceries/apple.png' },
-    { id: '2', name: 'Product 2', quantity: 3, price: 20, image: '../assets/images/groceries/banana.png' },
+  const [exclusiveProducts, setExclusiveProducts] = useState([
+    { id: '1', name: 'Red Apples', quantity: "7pc,priceg", price: 10, image: require('assets/images/groceries/apple.png') },
+    { id: '2', name: 'Organic bananas', quantity: "7pc,priceg", price: 20, image: require('assets/images/groceries/banana.png') },
+    { id: '3', name: 'Pell pepper red', quantity: "7pc,priceg", price: 10, image: require('assets/images/groceries/pepper.png') },
+
   ]);
+
+  const [bestSellingProducts, setBestSellingProducts] = useState([
+    { id: '1', name: 'Pell pepper red', quantity: "7pc,priceg", price: 10, image: require('assets/images/groceries/pepper.png') },
+    { id: '2', name: 'Ginger', quantity: "250gm,priceg", price: 20, image: require('assets/images/groceries/ginger.png') },
+    { id: '3', name: 'Pell pepper red', quantity: "7pc,priceg", price: 10, image: require('assets/images/groceries/pepper.png') },
+
+   ]);
+
+   const groceries = [
+    { id: '1', text: 'Pulse' },
+    { id: '2', text: 'Rice' },
+   
+  ];
+
   const handleAddPress = () => {
     // Handle adding the product to the cart or perform other actions
     console.log(`Product with ID added`);
@@ -39,23 +55,22 @@ const Home = () => {
      />
       </View>
       <View >
-        <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between',alignItems:'center',width:380, marginTop:20}}>
+        <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',width:380, marginTop:20}}>
             <Text style={styles.text}>Exclusive Offer</Text>
             <Text style={{color:Colors.primary}}>See all</Text>
         </View>
+    
+      <FlatList 
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{
+          flexDirection: 'row',
+         justifyContent:'space-around',
+         paddingLeft:17
         
-        <ScrollView
-         ref={scrollRef}
-         showsHorizontalScrollIndicator={false}
-         contentContainerStyle={{
-            alignItems: 'center',
-            gap: 20,
-            paddingHorizontal: 16,
-          }}
-        >
-        <View>
-      <FlatList
-        data={products}
+        
+        }}
+        data={exclusiveProducts}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <Card
@@ -65,10 +80,77 @@ const Home = () => {
         )}
       />
     </View>
-        </ScrollView>
-      </View>
+        
+    </View> 
+    <View >
+        <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',width:380, marginTop:20}}>
+            <Text style={styles.text}>Best Selling</Text>
+            <Text style={{color:Colors.primary}}>See all</Text>
+        </View>
+    
+      <FlatList 
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{
+          flexDirection: 'row',
+         justifyContent:'space-around',
+         paddingLeft:17
+        
+        
+        }}
+        data={bestSellingProducts}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Card
+            product={item}
+            onAddPress={handleAddPress}
+          />
+        )}
+      />
     </View>
     
+    <View >
+        <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',width:380, marginTop:20}}>
+            <Text style={styles.text}>Groceries</Text>
+            <Text style={{color:Colors.primary}}>See all</Text>
+        </View>
+        <ScrollView horizontal style={styles.container2} showsHorizontalScrollIndicator={false}>
+      {/* First horizontally scrolling section */}
+      <View style={styles.section1}>
+      <Image 
+      source={require("assets/images/groceries/pulse.png")}
+     />
+     <Text style={styles.sectionText}>Pulse</Text>
+      </View>
+
+      {/* Second horizontally scrolling section */}
+      <View style={styles.section2}>
+      <Image 
+      source={require("assets/images/groceries/rice.png")}
+     />
+     <Text style={styles.sectionText}>Rice</Text>
+      </View>
+    </ScrollView>
+      <FlatList 
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{
+          flexDirection: 'row',
+         justifyContent:'space-around',
+         paddingLeft:17
+        
+        
+        }}
+        data={bestSellingProducts}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Card
+            product={item}
+            onAddPress={handleAddPress}
+          />
+        )}
+      />
+    </View>
     </ScrollView>
   );
 };
@@ -81,10 +163,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
 
   },
+  container2: {
+    flex: 1,
+    flexDirection: 'row',
+  },
   main:{
     flex: 1,
     justifyContent: "space-between",
     alignItems: "center",
+    
    
   },
   banner:{
@@ -94,10 +181,39 @@ const styles = StyleSheet.create({
   text:{
     fontSize:24,
     fontWeight:'500',
-    color:'#181725',
-    // marginRight:200,
-    // padding:30
+    paddingLeft:30
     
+  },
+  flatlist:{
+    flexDirection:'row',
+    backgroundColor:'pink'
+  },
+  section1:{
+      backgroundColor:'rgba(248, 164, 76, 0.15)',
+      flexDirection:'row',
+      justifyContent:'space-evenly',
+      alignItems:'center',
+      width:248,
+      height:105,
+      borderRadius:20,
+      marginLeft:30
+      
+  },
+  section2:{
+    backgroundColor:'rgba(83, 177, 117, 0.15)',
+    flexDirection:'row',
+    justifyContent:'space-evenly',
+    alignItems:'center',
+    width:248,
+    height:105,
+    borderRadius:20,
+    marginLeft:30
+    
+},
+  sectionText:{
+    fontSize:20,
+    color:'#3E423F',
+    fontWeight:'500'
   }
 });
 
