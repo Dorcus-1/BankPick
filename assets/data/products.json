@@ -1,0 +1,13 @@
+{
+    "exclusiveProducts": [
+      { "id": "1", "name": "Red Apples", "quantity": "7pc,priceg", "price": 10, "image":"@/assets/images/groceries/pepper.png" },
+      { "id": "2", "name": "Organic bananas", "quantity": "7pc,priceg", "price": 20, "image":"@/assets/images/groceries/ginger.png" },
+      { "id": "3", "name": "Pell pepper red", "quantity": "7pc,priceg", "price": 10, "image":"@/assets/images/groceries/pepper.png" }
+    ],
+    "bestSellingProducts": [
+      { "id": "1", "name": "Pell pepper red", "quantity": "7pc,priceg", "price": 10, "image": "@/assets/images/groceries/pepper.png" },
+      { "id": "2", "name": "Ginger", "quantity": "250gm,priceg", "price": 20, "image":"@/assets/images/groceries/ginger.png" },
+      { "id": "3", "name": "Pell pepper red", "quantity": "7pc,priceg", "price": 10, "image":"@/assets/images/groceries//pepper.png" }
+    ]
+  }
+  

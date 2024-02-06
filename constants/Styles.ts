@@ -54,5 +54,12 @@ inputField:{
     fontWeight:'500',
     color:'black',
 
+},
+view:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems: 'center',
+    width:380,
+    marginBottom:50
 }
 })

@@ -3,11 +3,22 @@ import React, { Component } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import Colors from "@/constants/Colors";
+import { useNavigation } from '@react-navigation/native';
+
 
 // create a component
 const Card = ({ product, onAddPress }) => {
   const { name, quantity, price, image } = product;
+
+  const navigation = useNavigation();
+
+  const handleCardPress = () => {
+    // Navigate to the detail page, passing the product as a parameter
+    navigation.navigate('details/[id]', { product });
+  };
+
   return (
+    <TouchableOpacity onPress={handleCardPress}>
     <View style={styles.container}>
       <View style={styles.image} >
         <Image source={product.image} />
@@ -25,6 +36,7 @@ const Card = ({ product, onAddPress }) => {
         </View>
       </View>
     </View>
+    </TouchableOpacity>
   );
 };
 

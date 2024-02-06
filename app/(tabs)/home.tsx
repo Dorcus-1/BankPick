@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <ScrollView>
         <View style={styles.main}>
-              <View style={styles.container}>
+        <View style={styles.container}>
         <Stack.Screen
           options={{
             header: () => <ExploreHeader />,
