@@ -49,6 +49,7 @@ const ProductDetail = () => {
                       style={StyleSheet.absoluteFill}
                     />
                   </BlurView>
+                  <Image source={product.image} style={styles.image}></Image>
                 </ImageBackground>
               </View>
             ),
@@ -95,11 +96,8 @@ const styles = StyleSheet.create({
     height: 162,
     width: 255,
     backgroundColor: "#F2F3F2",
-    // position: 'absolute',
-    // top: 0,
-    // left: 0,
-    // bottom: 0,
-    // right: 0,
+    alignItems: "center",
+    justifyContent: "center",
   },
   blurCont: {
     position: "absolute",
@@ -114,6 +112,10 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
   },
+  image:{
+   
+  
+  }
 });
 
 //make this component available to the app
